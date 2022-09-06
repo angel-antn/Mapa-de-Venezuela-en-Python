@@ -42,9 +42,7 @@ if len(guesses) == 24:
     turtle.write(arg='Has acertado los 24 estados de Venezuela!', align='center', font=FONT)
 else:
 
-    for i in states:
-        if i in guesses:
-            states.pop(states.index(i))
+    states = [i for i in states if i not in guesses]
 
     states_left = {'Estados a repasar': states}
     data_left = pandas.DataFrame(states_left)
